@@ -1,0 +1,104 @@
+// variables.scss
+@use "variables" as vars;
+
+body {
+  text-align: center;
+  background-color: vars.$bkgdColor;
+  font-family: arial;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.container {
+  width: 50rem;
+  margin: 5rem auto;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.bowlers {
+  display: flex;
+  flex-direction: column;
+}
+
+.bowlers:first-of-type {
+  margin-top: 2rem;
+}
+
+.bowler {
+  width: 15rem;
+}
+
+@mixin bowlingFrame() {
+  border: 0.2rem solid vars.$borderColor;
+  margin: 1rem;
+  margin-right: 0.1rem;
+  background-color: vars.$frameBkgdColor;
+  width: 4rem;
+  height: 2rem;
+
+  &:hover {
+    background-color: vars.$frameHoverColor;
+  }
+}
+
+.bowlingFrames {
+  display: flex;
+
+  &--1 {
+    @include bowlingFrame;
+  }
+
+  &--2 {
+    @include bowlingFrame;
+  }
+
+  &--3 {
+    @include bowlingFrame;
+  }
+
+  &--4 {
+    @include bowlingFrame;
+  }
+
+  &--5 {
+    @include bowlingFrame;
+  }
+
+  &--6 {
+    @include bowlingFrame;
+  }
+
+  &--7 {
+    @include bowlingFrame;
+  }
+
+  &--8 {
+    @include bowlingFrame;
+  }
+
+  &--9 {
+    @include bowlingFrame;
+  }
+
+  &--10 {
+    @include bowlingFrame;
+  }
+}
+
+.bowlingFrame:first-of-type {
+  margin-left: 0;
+}
+
+.frames {
+  border-right: 0.2rem solid brown;
+  // background-color: bisque;
+  width: 1.9rem;
+  height: 2rem;
+}

@@ -1,0 +1,2 @@
+export const AngelasBowlingFrames = [[8, 1], [9, "/"], [9, "/"], ["x"], [4, 5], [1, "/"], ["x"], ["x"], [3, "/"], [4, "/", 8]]
+export const BriansBowlingFrames = [["x"], ["x"], ["x"], ["x"], ["x"], ["x"], ["x"], ["x"], ["x"], ["x", 9, "/"]]

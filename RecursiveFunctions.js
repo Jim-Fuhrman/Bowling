@@ -1,14 +1,12 @@
-const AngelasBowlingFrames = [[8, 1], [9, "/"], [9, "/"], ["x"], [4, 5], [1, "/"], ["x"], ["x"], [3, "/"], [4, "/", 8]]
+import * as scoresFile from './bowlingScoresFile.js';
 
-const BriansBowlingFrames = [["x"], ["x"], ["x"], ["x"], ["x"], ["x"], ["x"], ["x"], ["x"], ["x", 9, "/"]]
-
-let nmbr = -1,
-  currentFrame = 0,
-  currentFrameScore = 0,
-  totalBowlingScore = 0,
-  passingFrameScore = 0
-const frameScores = new Array(10).fill(0)
+let nmbr, currentFrame, currentFrameScore, totalBowlingScore, passingFrameScore
 let stars
+
+function initialize() {
+  nmbr = -1,
+  currentFrame = currentFrameScore = totalBowlingScore = passingFrameScore = 0
+}
 
 function bowlingScore(bowlingFrames) {
   nmbr++
@@ -107,5 +105,8 @@ function checkTenthFrame(lastFrame) {
   }
 }
 
-console.log(BriansBowlingFrames)
-bowlingScore(BriansBowlingFrames)
+initialize()
+bowlingScore(scoresFile.AngelasBowlingFrames)
+console.log(' ')
+initialize()
+bowlingScore(scoresFile.BriansBowlingFrames)

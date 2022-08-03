@@ -63,15 +63,6 @@ body {
   @include bowlingFrameMixin;
 }
 
-.scoreFrames {
-  display: flex;
-}
-
-.scoreFrame extends bowlingFrame {
-  width: 4rem;
-  height: 4rem;
-}
-
 .bowlingFrame:nth-of-type(odd) {
   border-left: 0.2rem solid vars.$borderColor;
   margin-left: 1rem;

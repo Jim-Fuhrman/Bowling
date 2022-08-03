@@ -1,7 +1,6 @@
 import "./style.scss"
 
-const bowlingFrames1 = document.querySelector('.bowlingFrames1')
-const bowlingFrames2 = document.querySelector('.bowlingFrames2')
+const bowlingFrames1 = document.querySelector('.bowlingFrames');
 let totalScore = 0;
 
 function score(e) {

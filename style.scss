@@ -42,73 +42,67 @@ body {
   width: 15rem;
 }
 
-@mixin bowlingFrames() {
-  margin-right: 0rem;
-  border: 0.2rem solid vars.$borderColor;
-  background-color: vars.$frameBkgdColor;
+@mixin bowlingFrameMixin() {
+    margin-right: 0rem;
+    border: 0.2rem solid vars.$borderColor;
+    background-color: vars.$frameBkgdColor;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: vars.$frameHoverColor;
+    }
+}
+
+.bowlingFrames {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 2rem;
-  &:hover {
-    background-color: vars.$frameHoverColor;
-  }
+  margin-top: .5rem;
 }
 
 .bowlingFrame {
-  @include bowlingFrames;
-
-  &--small {
-    @extend .bowlingFrame;
-    width: 2rem;
-  }
-  
-  &--large {
-    @extend .bowlingFrame;
-    width: 3.9rem;
-  }
+  @include bowlingFrameMixin;
 }
 
-.bowlingFramesRow {
+.scoreFrames {
   display: flex;
-  
-  &--small {
-    @extend .bowlingFramesRow;
-    margin-top: .5rem;
-  }
-  
-  &--large {
-    @extend .bowlingFramesRow;
-    margin-top: 0;
-  }
 }
 
-.bowlingFrame--large {
-  border-left: 0.2rem solid vars.$borderColor;
+.scoreFrame {
+  margin-right: 0rem;
+  border: 0.2rem solid vars.$borderColor;
+  background-color: vars.$frameBkgdColor;
+  width: 3.9rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 0;
   margin-left: 1rem;
-  margin-top: 0;
 }
 
-.bowlingFrame--small:nth-of-type(odd) {
+.bowlingFrame:nth-of-type(odd) {
   border-left: 0.2rem solid vars.$borderColor;
   margin-left: 1rem;
 }
 
-.bowlingFrame--small:nth-of-type(even) {
+.bowlingFrame:nth-of-type(even) {
   border-left: 0;
 }
 
 .bowlingFrame:first-of-type,
-.bowlingFrame--large:first-of-type
+.scoreFrame:first-of-type
 {
   margin-left: 0;
 }
 
-.bowlingFrame--small:last-of-type {
+.bowlingFrame:last-of-type {
   border-left: 0;
   margin-left: 0;
 }
 
-.bowlingFrame--large:last-of-type {
+.scoreFrame:last-of-type {
   width: 5.9rem;
 }

@@ -42,67 +42,70 @@ body {
   width: 15rem;
 }
 
-@mixin bowlingFrameMixin() {
-    margin-right: 0rem;
-    border: 0.2rem solid vars.$borderColor;
-    background-color: vars.$frameBkgdColor;
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &:hover {
-      background-color: vars.$frameHoverColor;
-    }
-}
-
-.bowlingFrames {
-  display: flex;
-  margin-top: .5rem;
-}
-
-.bowlingFrame {
-  @include bowlingFrameMixin;
-}
-
-.scoreFrames {
-  display: flex;
-}
-
-.scoreFrame {
+@mixin bowlingFrames() {
   margin-right: 0rem;
   border: 0.2rem solid vars.$borderColor;
   background-color: vars.$frameBkgdColor;
-  width: 3.9rem;
-  height: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 0;
-  margin-left: 1rem;
+  height: 2rem;
+  &:hover {
+    background-color: vars.$frameHoverColor;
+  }
 }
 
-.bowlingFrame:nth-of-type(odd) {
+.bowlingFrame {
+  @include bowlingFrames;
+
+  &--small {
+    @extend .bowlingFrame;
+    width: 2rem;
+  }
+  
+  &--large {
+    @extend .bowlingFrame;
+    width: 3.9rem;
+    border-left: 0.2rem solid vars.$borderColor;
+    border-top: 0;
+    margin-left: 1rem;  
+  }
+}
+
+.bowlingFramesRow {
+  display: flex;
+  
+  &--small {
+    @extend .bowlingFramesRow;
+    margin-top: .5rem;
+  }
+  
+  &--large {
+    @extend .bowlingFramesRow;
+    margin-top: 0;
+  }
+}
+
+.bowlingFrame--small:nth-of-type(odd) {
   border-left: 0.2rem solid vars.$borderColor;
   margin-left: 1rem;
 }
 
-.bowlingFrame:nth-of-type(even) {
+.bowlingFrame--small:nth-of-type(even) {
   border-left: 0;
 }
 
 .bowlingFrame:first-of-type,
-.scoreFrame:first-of-type
+.bowlingFrame--large:first-of-type
 {
   margin-left: 0;
 }
 
-.bowlingFrame:last-of-type {
+.bowlingFrame--small:last-of-type {
   border-left: 0;
   margin-left: 0;
 }
 
-.scoreFrame:last-of-type {
+.bowlingFrame--large:last-of-type {
   width: 5.9rem;
 }

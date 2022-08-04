@@ -66,6 +66,9 @@ body {
   &--large {
     @extend .bowlingFrame;
     width: 3.9rem;
+    border-left: 0.2rem solid vars.$borderColor;
+    border-top: 0;
+    margin-left: 1rem;  
   }
 }
 
@@ -81,12 +84,6 @@ body {
     @extend .bowlingFramesRow;
     margin-top: 0;
   }
-}
-
-.bowlingFrame--large {
-  border-left: 0.2rem solid vars.$borderColor;
-  margin-left: 1rem;
-  margin-top: 0;
 }
 
 .bowlingFrame--small:nth-of-type(odd) {

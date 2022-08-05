@@ -4,51 +4,102 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="usingMixinsExtends.scss" />
+    <link rel="stylesheet" href="style.scss" />
     <title>Bowling</title>
   </head>
   <body>
-    <!-- usingMixinsExtends.html -->
-    <!-- To make the bowling app work (1) type npm run dev (2) click http://127.0.0.1:5173 -->
-    <!-- To make the bowling app work (1) type npm run dev (2) click http://127.0.0.1:5173 -->
-    <!-- To make the bowling app work (1) type npm run dev (2) click http://127.0.0.1:5173 -->
+    <!-- using index.html -->
     <div class="container">
-      <img src="https://images.unsplash.com/photo-1538511059256-46e76f13f071?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Ym93bGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="bowling picture won't load" />
-      <form class="hide bowlers" action="">
-        <div class="left-align">
-          <label for="bowler1">Bowler #1</label>
-          <input class="bowler" type="text" name="bowler1" />
+      <!-- Look at YelpCamp/public/stylesheets/landing.css -->
+      <!-- <img src="https://images.unsplash.com/photo-1538511059256-46e76f13f071?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Ym93bGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="bowling picture won't load" /> -->
+      <img src="https://images.unsplash.com/photo-1545056453-f0359c3df6db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Ym93bGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="bowling picture won't load" />
+      <form class="hide" action="">
+        <div class="bowler">
+          <div class="left-align">
+            <label for="bowler1">Bowler #1</label>
+            <input class="bowlerName" type="text" name="bowler1" />
+          </div>
+          <div class="bowlingFramesRow--small">
+            <div class="bowlingFrame--small">5</div>
+            <div class="bowlingFrame--small">/</div>
+            <div class="bowlingFrame--small">X</div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small">9</div>
+            <div class="bowlingFrame--small">-</div>
+            <div class="bowlingFrame--small">x</div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small">x</div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small">x</div>
+            <div class="bowlingFrame--small">🦃</div>
+            <div class="bowlingFrame--small">9</div>
+            <div class="bowlingFrame--small">/</div>
+            <div class="bowlingFrame--small">8</div>
+            <div class="bowlingFrame--small">/</div>
+            <div class="bowlingFrame--small">6</div>
+            <div class="bowlingFrame--small">2</div>
+            <div class="bowlingFrame--small">x</div>
+            <div class="bowlingFrame--small">8</div>
+            <div class="bowlingFrame--small">/</div>
+          </div>
+          <div class="bowlingFramesRow--large">
+            <div class="bowlingFrame--large">20</div>
+            <div class="bowlingFrame--large">39</div>
+            <div class="bowlingFrame--large">48</div>
+            <div class="bowlingFrame--large">78</div>
+            <div class="bowlingFrame--large">107</div>
+            <div class="bowlingFrame--large">127</div>
+            <div class="bowlingFrame--large">145</div>
+            <div class="bowlingFrame--large">161</div>
+            <div class="bowlingFrame--large">169</div>
+            <div class="bowlingFrame--large">❤️189❤️</div>
+          </div>
         </div>
-        <div class="bowlingFrames">
-          <div class="bowlingFrame"><div class="frames"><input type="text" name="b1f1"></div></div>
-          <div class="bowlingFrame"><div class="frames"></div></div>
-          <div class="bowlingFrame"><div class="frames"></div></div>
-          <div class="bowlingFrame"><div class="frames"></div></div>
-          <div class="bowlingFrame"><div class="frames"></div></div>
-          <div class="bowlingFrame"><div class="frames"></div></div>
-          <div class="bowlingFrame"><div class="frames"></div></div>
-          <div class="bowlingFrame"><div class="frames"></div></div>
-          <div class="bowlingFrame"><div class="frames"></div></div>
-          <div class="bowlingFrame--10"><div class="frames frames--10"></div></div>
-        </div>
-        <div class="left-align">
-          <label for="bowler2">Bowler #2</label>
-          <input class="bowler" type="text" name="bowler2" />
-        </div>
-        <div class="bowlingFrames">
-          <div class="bowlingFrame"><div class="frames"></div></div>
-          <div class="bowlingFrame"><div class="frames"></div></div>
-          <div class="bowlingFrame"><div class="frames"></div></div>
-          <div class="bowlingFrame"><div class="frames"></div></div>
-          <div class="bowlingFrame"><div class="frames"></div></div>
-          <div class="bowlingFrame"><div class="frames"></div></div>
-          <div class="bowlingFrame"><div class="frames"></div></div>
-          <div class="bowlingFrame"><div class="frames"></div></div>
-          <div class="bowlingFrame"><div class="frames"></div></div>
-          <div class="bowlingFrame--10"><div class="frames"></div></div>
+
+        <div class="bowler">
+          <div class="left-align">
+            <label for="bowler1">Bowler #2</label>
+            <input class="bowlerName" type="text" name="bowler1" />
+          </div>
+          <div class="bowlingFramesRow--small">
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+            <div class="bowlingFrame--small"></div>
+          </div>
+          <div class="bowlingFramesRow--large">
+            <div class="bowlingFrame--large"></div>
+            <div class="bowlingFrame--large"></div>
+            <div class="bowlingFrame--large"></div>
+            <div class="bowlingFrame--large"></div>
+            <div class="bowlingFrame--large"></div>
+            <div class="bowlingFrame--large"></div>
+            <div class="bowlingFrame--large"></div>
+            <div class="bowlingFrame--large"></div>
+            <div class="bowlingFrame--large"></div>
+            <div class="bowlingFrame--large"></div>
+          </div>
         </div>
       </form>
-    </div>
+    </div>  <!-- container class closing div -->
     <script type="module" src="main.js"></script>
+    <!-- <script type="module" src="RecursiveFunctions.js"></script> -->
   </body>
 </html>

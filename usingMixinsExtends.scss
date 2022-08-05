@@ -15,63 +15,97 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
   width: 50rem;
-  margin: 5rem auto;
-}
-
-.bowlers {
-  display: flex;
-  flex-direction: column;
+  margin: 1rem auto;
+  
 }
 
 .bowlers:first-of-type {
   margin-top: 2rem;
 }
 
+.left-align {
+  text-align: left;
+}
+
 .bowler {
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.bowlerName {
   width: 15rem;
 }
 
-@mixin bowlingFrame() {
+@mixin bowlingFrames() {
+  margin-right: 0rem;
   border: 0.2rem solid vars.$borderColor;
-  margin: 1rem;
-  margin-right: 0.1rem;
   background-color: vars.$frameBkgdColor;
-  width: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 2rem;
-
   &:hover {
     background-color: vars.$frameHoverColor;
   }
 }
 
-.bowlingFrames {
-  display: flex;
-}
-
 .bowlingFrame {
-  @include bowlingFrame;
+  @include bowlingFrames;
 
-  &--10 {
-    @extend .bowlingFrame; //no left curly brace should be on the same line as the @extend
-    width: 8rem;
+  &--small {
+    @extend .bowlingFrame;
+    width: 2rem;
+  }
+  
+  &--large {
+    @extend .bowlingFrame;
+    width: 3.9rem;
+    border-left: 0.2rem solid vars.$borderColor;
+    border-top: 0;
+    margin-left: 1rem;  
   }
 }
 
-.bowlingFrame:first-of-type {
+.bowlingFramesRow {
+  display: flex;
+  
+  &--small {
+    @extend .bowlingFramesRow;
+    margin-top: .5rem;
+  }
+  
+  &--large {
+    @extend .bowlingFramesRow;
+    margin-top: 0;
+  }
+}
+
+.bowlingFrame--small:nth-of-type(odd) {
+  border-left: 0.2rem solid vars.$borderColor;
+  margin-left: 1rem;
+}
+
+.bowlingFrame--small:nth-of-type(even) {
+  border-left: 0;
+}
+
+.bowlingFrame:first-of-type,
+.bowlingFrame--large:first-of-type
+{
   margin-left: 0;
 }
 
-.frames {
-  border-right: 0.2rem solid vars.$borderColor;
-  width: 1.8rem;
-  height: 1.8rem;
+.bowlingFrame--small:last-of-type {
+  border-left: 0;
+  margin-left: 0;
+}
 
-  &--10 {
-    @extend .frames;
-    width: 3.6rem;
-  }
+.bowlingFrame--large:last-of-type {
+  width: 5.9rem;
 }

@@ -1,0 +1,22 @@
+@use "variables" as vars;
+@use "sass:map";
+// I'm going to try to create a map of border styles
+$borderStylesMap:(
+   "bowlerName": (
+      background-color: antiquewhite, 
+      color: brown, 
+      border: 0.2rem solid brown
+    ),
+   "bowlingFrame": (
+      background-color: vars.$frameBkgdColor,
+      color: black,
+      border: 0.2rem solid vars.$borderColor
+    )
+);
+
+$textColors: (
+  "frequent": black,
+  "lessFrequent": brown,
+  "rarely": white
+)
+

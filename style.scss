@@ -1,5 +1,6 @@
 // variables.scss
 @use "variables" as vars;
+@use "sassMap" as sassMap;
 
 * {
   box-sizing: border-box;
@@ -40,6 +41,15 @@ body {
 
 .bowlerName {
   width: 15rem;
+  padding-left: .51rem;
+  background-color: antiquewhite;
+  /*
+  // This map call doesn't compile 
+  background-color: 
+    map.get(sassMap.$borderStylesMap.bowlerName.background-color);
+  */
+  color: brown;
+  border: .2rem solid brown;
 }
 
 /* the following is a placeholder. */

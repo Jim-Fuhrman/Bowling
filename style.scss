@@ -1,6 +1,8 @@
 // variables.scss
 @use "variables" as vars;
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ubuntu&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -8,7 +10,7 @@
 body {
   text-align: center;
   background-color: vars.$bkgdColor;
-  font-family: arial;
+  font-family: roboto;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -30,6 +32,7 @@ body {
 
 .bowlerName {
   text-align: left;
+  font-size: 1.5rem;
 }
 
 .bowlers {

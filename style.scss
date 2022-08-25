@@ -1,7 +1,68 @@
 // variables.scss
 @use "variables" as vars;
+@use "sass:map";
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ubuntu&display=swap');
+
+@mixin bowlingFramesMixin() {
+  margin-right: 0rem;
+  border: 0.2rem solid vars.$borderColor;  /* commenting out this line removes borrders */
+  background-color: vars.$frameBkgdColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  &:hover {
+    background-color: vars.$frameHoverColor;
+  }
+}
+
+/* I'm going to try to create a map of border styles */
+$bowlerThemesMap: (
+   "-bowler1": (
+      background-color: vars.$frameBkgdColor, 
+      color: vars.$borderColor, 
+      border: 0.2rem solid brown
+    ),
+   "-bowler2": (
+      background-color: beige,
+      color: indigo,
+      border: 0.2rem solid indigo
+      ),
+    "-bowler3": (
+      background-color: antiquewhite,
+      color: black,
+      border: 0.2rem solid black
+    ),
+    "-bowler4": (
+      background-color: moccasin,
+      color: maroon,
+      border: 0.2rem solid maroon
+    )
+);
+
+@mixin frameColors($name, $passedBkgdColor: vars.$frameBkgdColor, $passedBorderColor: vars.$borderColor) {
+  .bowler#{$name} {
+  margin-right: 0rem;
+  border: 0.2rem solid $passedBorderColor;
+  background-color: $passedBkgdColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  &:hover {
+    background-color: vars.$frameHoverColor;
+  }
+  }
+}
+
+.frames-bowler1 {
+  @include frameColors("");
+}
+
+@each $key, $values in $bowlerThemesMap {
+  @include frameColors($key, values...)
+}
 
 * {
   box-sizing: border-box;
@@ -24,6 +85,7 @@ body {
 .container {
   width: 50rem;
   margin: 1rem auto;
+  
 }
 
 .bowlers:first-of-type {
@@ -35,43 +97,32 @@ body {
   font-size: 1.5rem;
 }
 
-.bowler {
-  margin-top: 2rem;
-}
-
 .bowlers {
   width: 100%;
   margin: 2rem auto;
 }
 
-/* the following is a placeholder. */
-%bowlingFrame {
-  margin-right: 0rem;
-  border: 0.2rem solid vars.$borderColor;
-  background-color: vars.$frameBkgdColor;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 2rem;
+.bowler {
+  width: 100%;
+  margin: 2rem auto;
 }
 
-.bowlingFrame--small {
-  @extend %bowlingFrame;
-  width: 2rem;
-  &:hover {
-    background-color: vars.$frameHoverColor;
+.bowlingFrame {
+  @include bowlingFramesMixin;
+  /* @include frameColors(""); */
+
+  &--small {
+    @extend .bowlingFrame;
+    width: 2rem;
   }
-}
-
-.bowlingFrame--large {
-  @extend %bowlingFrame;
-  width: 3.9rem;
-  border-left: 0.2rem solid vars.$borderColor;
-  border-top: 0;
-  margin-left: 1rem;
-  &:hover {
-    background-color: vars.$frameHoverColor;
-  }  
+  
+  &--large {
+    @extend .bowlingFrame;
+    width: 3.9rem;
+    border-left: 0.2rem solid vars.$borderColor;
+    border-top: 0;
+    margin-left: 1rem;  
+  }
 }
 
 .bowlingFramesRow {
@@ -97,7 +148,7 @@ body {
   border-left: 0;
 }
 
-.bowlingFrame--small:first-of-type
+.bowlingFrame:first-of-type,
 .bowlingFrame--large:first-of-type
 {
   margin-left: 0;

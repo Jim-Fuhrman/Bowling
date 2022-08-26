@@ -1,8 +1,11 @@
 // variables.scss
 @use "variables" as vars;
-@use "sass:map";
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ubuntu&display=swap');
+
+* {
+  box-sizing: border-box;
+}
 
 @mixin bowlingFramesMixin() {
   margin-right: 0rem;
@@ -17,62 +20,10 @@
   }
 }
 
-/* I'm going to try to create a map of border styles */
-$bowlerThemesMap: (
-   "-bowler1": (
-      background-color: vars.$frameBkgdColor, 
-      color: vars.$borderColor, 
-      border: 0.2rem solid brown
-    ),
-   "-bowler2": (
-      background-color: beige,
-      color: indigo,
-      border: 0.2rem solid indigo
-      ),
-    "-bowler3": (
-      background-color: antiquewhite,
-      color: black,
-      border: 0.2rem solid black
-    ),
-    "-bowler4": (
-      background-color: moccasin,
-      color: maroon,
-      border: 0.2rem solid maroon
-    )
-);
-
-@mixin frameColors($name, $passedBkgdColor: vars.$frameBkgdColor, $passedBorderColor: vars.$borderColor) {
-  .bowler#{$name} {
-  margin-right: 0rem;
-  border: 0.2rem solid $passedBorderColor;
-  background-color: $passedBkgdColor;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 2rem;
-  &:hover {
-    background-color: vars.$frameHoverColor;
-  }
-  }
-}
-
-.frames-bowler1 {
-  @include frameColors("");
-}
-
-@each $key, $values in $bowlerThemesMap {
-  @include frameColors($key, values...)
-}
-
-* {
-  box-sizing: border-box;
-}
-
 body {
   text-align: center;
   background-color: vars.$bkgdColor;
   font-family: roboto;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -85,7 +36,6 @@ body {
 .container {
   width: 50rem;
   margin: 1rem auto;
-  
 }
 
 .bowlers:first-of-type {

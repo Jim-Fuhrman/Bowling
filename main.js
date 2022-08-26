@@ -24,7 +24,7 @@ bowlers.forEach((bowler, bIdx, bArr) => {
   newBowler.classList.add('bowler');
   newBowler.innerHTML = `
   <div class="bowlerName">${personName}</div>
-    <div class="frameColors-bowler${bIdx+1} bowlingFramesRow--small">
+    <div class="bowlingFramesRow--small">
       <div class="frame1 bowlingFrame--small">${frames[0][0]}</div>
       <div class="frame1 bowlingFrame--small">${frames[0][1]}</div>
       <div class="frame2 bowlingFrame--small">${frames[1][0]}</div>
@@ -47,7 +47,7 @@ bowlers.forEach((bowler, bIdx, bArr) => {
       <div class="frame10 bowlingFrame--small">${frames[9][1]}</div>
       <div class="frame10 bowlingFrame--small">${frames[9][2]}</div>
     </div>
-    <div class="frameColors-bowler${bIdx+1} bowlingFramesRow--large">
+    <div class="bowlingFramesRow--large">
       <div class="frame1 bowlingFrame--large">${frameScores[0]}</div>
       <div class="frame2 bowlingFrame--large">${frameScores[1]}</div>
       <div class="frame3 bowlingFrame--large">${frameScores[2]}</div>
@@ -61,8 +61,3 @@ bowlers.forEach((bowler, bIdx, bArr) => {
     </div>
   `
 })
-
-/*
-<div class="bowlingFrame-bowler${bIdx+1}.bowlingFramesRow--small">
-<div class="bowlingFrame-bowler${bIdx+1}.bowlingFramesRow--large">
-*/

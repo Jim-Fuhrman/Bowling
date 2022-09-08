@@ -10,7 +10,10 @@ bowlers.forEach((bowler, bIdx, bArr) => {
   let personName = bowler[0];
   let frames = bowler[1];
   let frameScores = bowler[2];
-
+  let acknowledge = ' ';
+  if(frameScores[9] === 300) {
+    acknowledge = '🎳🎳🎳 Perfect Game!!! 🎳🎳🎳'
+  }
   /*
   console.log(`personName: ${personName}`)
   console.log(`frames: ${frames}`)
@@ -23,7 +26,7 @@ bowlers.forEach((bowler, bIdx, bArr) => {
   bowlingTeam.appendChild(newBowler);
   newBowler.classList.add('bowler');
   newBowler.innerHTML = `
-  <div class="bowlerName">${personName}</div>
+  <div class="bowlerName">${personName} &nbsp; &nbsp; &nbsp; ${acknowledge}</div>
     <div class="bowlingFramesRow--small">
       <div class="frame1 bowlingFrame--small">${frames[0][0]}</div>
       <div class="frame1 bowlingFrame--small">${frames[0][1]}</div>
